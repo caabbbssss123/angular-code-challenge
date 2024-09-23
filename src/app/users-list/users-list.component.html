@@ -7,7 +7,7 @@
       <div class="col-md-8 col-lg-9">
         <div class="card-body">
           <h5 class="card-title">{{user.name}}</h5>
-          <a [href]="user.id">Show profile</a>
+          <a [routerLink]="['/', user.id]">Show profile</a>
         </div>
       </div>
     </div>
