@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { UserData } from '../../model/user-data';
 
@@ -13,7 +13,8 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -24,8 +25,7 @@ export class UserDetailComponent implements OnInit {
         this.user = user;
       },
       error: () => {
-        // Handle user not found
-        console.error('User not found');
+        this.router.navigate(['/']);
       }
     });
   }

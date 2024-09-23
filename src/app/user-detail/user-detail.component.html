@@ -1,5 +1,5 @@
-<div *ngIf="user">
-    <h1>{{ user.name }}</h1>
-    <img [src]="user.profilePicture" alt="{{ user.name }}'s profile picture">
+<div *ngIf="user" class="text-center">
+    <img class="mb-2" [src]="user.profilePicture" alt="{{ user.name }}'s profile picture">
+    <h1 class="mb-4">{{ user.name }}</h1>
     <div [innerHTML]="user.bio | renderMarkdown"></div> <!-- Use the custom pipe here -->
 </div>
